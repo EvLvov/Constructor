@@ -1,0 +1,103 @@
+@mixin q-col-offset($screen) {
+  @for $i from 0 through 12 {
+    &--offset-#{$screen}-#{$i} {
+      margin-left: 8.33333333% * $i;
+    }
+  }
+}
+
+@mixin q-col-alignment($screen) {
+  &--start-#{$screen} {
+    justify-content: flex-start;
+    text-align: start;
+  }
+  &--center-#{$screen} {
+    justify-content: center;
+    text-align: center;
+  }
+  &--end-#{$screen} {
+    justify-content: flex-end;
+    text-align: end;
+  }
+  &--top-#{$screen} {
+    align-items: flex-start;
+  }
+  &--middle-#{$screen} {
+    align-items: center;
+  }
+  &--bottom-#{$screen} {
+    align-items: flex-end;
+  }
+}
+
+@mixin q-col-distribution($screen) {
+  &--around-#{$screen} {
+    justify-content:  space-around;
+  }
+  &--between-#{$screen} {
+    justify-content: space-between;
+  }
+}
+
+@mixin q-col-order($screen) {
+  &--first-#{$screen} {
+    order: -1;
+  }
+  &--last-#{$screen} {
+    order: 1;
+  }
+}
+
+@mixin q-col($screen) {
+  &--#{$screen} {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: var(--q-grid-half-gutter-width, 0.5rem);
+    padding-left: var(--q-grid-half-gutter-width, 0.5rem);
+  }
+
+  @for $i from 1 through 12 {
+    &--#{$screen}-#{$i} {
+      flex-basis: 8.33333333% * $i;
+      max-width: 8.33333333% * $i;
+      @extend .q-col--#{$screen};
+    }
+  }
+
+  @include q-col-offset($screen);
+  @include q-col-alignment($screen);
+  @include q-col-distribution($screen);
+  @include q-col-order($screen);
+}
+
+.q-col {
+  &.reverse {
+    flex-direction: column-reverse;
+  }
+  
+  @include q-col(xs);
+
+  @media only screen and (min-width: 48em) {
+    & {
+      width: var(--q-grid-container-sm, 46rem);
+    }
+
+    @include q-col(sm);
+  }
+
+  @media only screen and (min-width: 64em) {
+    & {
+      width: var(--q-grid-container-md, 61rem);
+    }
+
+    @include q-col(md);
+  }
+
+  @media only screen and (min-width: 75em) {
+    & {
+      width: var(--q-grid-container-lg, 71rem);
+    }
+
+    @include q-col(lg);
+  }
+}

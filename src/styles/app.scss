@@ -1,0 +1,63 @@
+@import "./media";
+@import "./normalize";
+@import "./u-utils";
+
+:host {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--q-font-sans);
+  font-size: var(--q-font-size-medium);
+  font-weight: var(--q-font-weight-normal);
+  letter-spacing: var(--q-letter-spacing-normal);
+  background-color: var(--q-color-neutral-0);
+  color: var(--q-color-neutral-900);
+  line-height: var(--q-line-height-normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--q-font-weight-normal);
+}
+
+h1 {
+  font-size: var(--q-font-size-2x-large);
+}
+
+b {
+  font-weight: 600;
+}
+
+code {
+  font-family: var(--q-font-mono);
+  font-size: 87.5%;
+  background-color: var(--q-color-neutral-50);
+  border-radius: var(--q-border-radius-small);
+  padding: 2px 6px;
+}
+
+svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

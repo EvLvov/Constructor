@@ -1,0 +1,50 @@
+.q-icon-button {
+  display: inline-block;
+
+  & {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: var(--q-border-radius-medium);
+    font-size: inherit;
+    color: var(--q-color-neutral-600);
+    padding: var(--q-spacing-x-small);
+    cursor: pointer;
+    transition: var(--q-transition-medium) color;
+    -webkit-appearance: none;
+  }
+
+  &:hover:not(&--disabled),
+  &:focus:not(&--disabled) {
+    color: var(--q-color-primary-600);
+  }
+  
+  &:active:not(&--disabled) {
+    color: var(--q-color-primary-700);
+  }
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &:focus-visible {
+    outline: var(--q-focus-ring);
+    outline-offset: var(--q-focus-ring-offset);
+  }
+  
+  &__icon {
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  &__text {
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,68 @@
+@import "../../styles/media";
+
+@mixin q-row-alignment($screen) {
+  &--start-#{$screen} {
+    justify-content: flex-start;
+    text-align: start;
+  }
+  &--center-#{$screen} {
+    justify-content: center;
+    text-align: center;
+  }
+  &--end-#{$screen} {
+    justify-content: flex-end;
+    text-align: end;
+  }
+  &--top-#{$screen} {
+    align-items: flex-start;
+  }
+  &--middle-#{$screen} {
+    align-items: center;
+  }
+  &--bottom-#{$screen} {
+    align-items: flex-end;
+  }
+}
+
+@mixin q-row-distribution($screen) {
+  &--around-#{$screen} {
+    justify-content: space-around;
+  }
+  &--between-#{$screen} {
+    justify-content: space-between;
+  }
+}
+
+.q-row {
+  --gutter-width: 1rem;
+
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: var(--q-grid-gutter-compensation, -0.5rem);
+  margin-left: var(--q-grid-gutter-compensation, -0.5rem);
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  @include q-row-alignment(xs);
+  @include q-row-distribution(xs);
+
+  @media (min-width: 48rem) {
+    @include q-row-alignment(md);
+    @include q-row-distribution(md);
+  }
+
+  @media (min-width: 64rem) {
+    @include q-row-alignment(md);
+    @include q-row-distribution(md);
+  }
+
+  @media (min-width: 75rem) {
+    @include q-row-alignment(lg);
+    @include q-row-distribution(lg);
+  }
+}

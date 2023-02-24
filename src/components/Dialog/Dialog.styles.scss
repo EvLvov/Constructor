@@ -1,0 +1,119 @@
+.q-dialog {
+  --width: 31rem;
+  --header-spacing: var(--q-spacing-large);
+  --body-spacing: var(--q-spacing-large);
+  --footer-spacing: var(--q-spacing-large);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--q-z-index-dialog);
+
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    width: var(--width);
+    max-width: calc(100% - var(--q-spacing-2x-large));
+    max-height: calc(100% - var(--q-spacing-2x-large));
+    background-color: var(--q-panel-background-color);
+    border-radius: var(--q-border-radius-medium);
+    box-shadow: var(--q-shadow-x-large);
+
+    /* Ensure there's enough vertical padding for phones that don't update vh when chrome appears (e.g. iPhone) */
+    @media screen and (max-width: 420px) {
+      max-height: 80vh;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__header {
+    flex: 0 0 auto;
+    display: flex;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font: inherit;
+    font-size: var(--q-font-size-large);
+    line-height: var(--q-line-height-dense);
+    padding: var(--header-spacing);
+    margin: 0;
+  }
+
+  &__close {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: var(--q-font-size-x-large);
+    padding: 0 var(--header-spacing);
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    padding: var(--body-spacing);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: var(--footer-spacing);
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--q-overlay-background-color);
+  }
+
+  &:not(&--has-footer) &__footer {
+    display: none;
+  }
+}
+
+.popup-enter-active .q-dialog__panel {
+  animation: bounce-in 0.3s;
+}
+.popup-leave-active .q-dialog__panel {
+  animation: bounce-in 0.3s reverse;
+}
+
+.popup-enter-active .q-dialog__overlay {
+  animation: bounce-in-overlay 0.3s;
+}
+.popup-leave-active .q-dialog__overlay {
+  animation: bounce-in-overlay 0.3s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-in-overlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

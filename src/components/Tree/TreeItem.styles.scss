@@ -1,0 +1,102 @@
+.q-tree-item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  color: var(--q-color-neutral-700);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+
+  &__checkbox {
+    pointer-events: none;
+  }
+
+  &__expand-button,
+  &__checkbox,
+  &__label {
+    font-family: var(--q-font-sans);
+    font-size: var(--q-font-size-medium);
+    font-weight: var(--q-font-weight-normal);
+    line-height: var(--q-line-height-normal);
+    letter-spacing: var(--q-letter-spacing-normal);
+  }
+
+  &__default-toggle-button {
+    font-size: 12px;
+    transition: var(--q-transition-medium) transform ease;
+  }
+
+  &__indentation {
+    display: block;
+    width: 1em;
+    flex-shrink: 0;
+  }
+
+  &__expand-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    color: var(--q-color-neutral-500);
+    padding: var(--q-spacing-x-small);
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+
+  &__expand-button--visible {
+    cursor: pointer;
+  }
+
+  &--expanded &__default-toggle-button {
+    transform: rotate(90deg);
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    border-inline-start: solid 3px transparent;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    transition: var(--q-transition-fast) color;
+  }
+
+  &__children {
+    display: none;
+    font-size: calc(1em + var(--indent-size, var(--q-spacing-medium)));
+  }
+
+  &--expanded &__children {
+    display: block;
+  }
+
+  /* Indentation lines */
+  &__children {
+    position: relative;
+  }
+
+  &__children::before {
+    content: "";
+    position: absolute;
+    top: var(--indent-guide-offset);
+    bottom: var(--indent-guide-offset);
+    left: calc(1em - (var(--indent-guide-width) / 2) - 1px);
+    border-inline-end: var(--indent-guide-width) var(--indent-guide-style)
+      var(--indent-guide-color);
+    z-index: 1;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: unset;
+  }
+}

@@ -1,0 +1,28 @@
+.q-popup {
+  --arrow-color: var(--q-color-neutral-1000);
+  --arrow-size: 6px;
+  --arrow-size-diagonal: calc(var(--arrow-size) * 0.7071);
+  --arrow-padding-offset: calc(var(--arrow-size-diagonal) - var(--arrow-size));
+
+  position: absolute;
+  isolation: isolate;
+  max-width: var(--auto-size-available-width, none);
+  max-height: var(--auto-size-available-height, none);
+
+  &--fixed {
+    position: fixed;
+  }
+
+  &:not(.q-popup--active) {
+    display: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: calc(var(--arrow-size-diagonal) * 2);
+    height: calc(var(--arrow-size-diagonal) * 2);
+    transform: rotate(45deg);
+    background: var(--arrow-color);
+    z-index: -1;
+  }
+}

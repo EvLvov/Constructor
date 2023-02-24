@@ -1,0 +1,64 @@
+@mixin q-grid-row-alignment($screen) {
+  &--start-#{$screen} {
+    justify-content: flex-start;
+    text-align: start;
+  }
+  &--center-#{$screen} {
+    justify-content: center;
+    text-align: center;
+  }
+  &--end-#{$screen} {
+    justify-content: flex-end;
+    text-align: end;
+  }
+  &--top-#{$screen} {
+    align-items: flex-start;
+  }
+  &--middle-#{$screen} {
+    align-items: center;
+  }
+  &--bottom-#{$screen} {
+    align-items: flex-end;
+  }
+}
+
+@mixin q-grid-row-distribution($screen) {
+  &--around-#{$screen} {
+    align-items: flex-end;
+  }
+  &--between-#{$screen} {
+    justify-content: space-between;
+  }
+}
+
+.q-grid-row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: var(--q-grid-gutter-compensation, -0.5rem);
+  margin-left: var(--q-grid-gutter-compensation, -0.5rem);
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  @include q-grid-row-alignment(xs);
+  @include q-grid-row-distribution(xs);
+
+  @media only screen and (min-width: 48em) {
+    @include q-grid-row-alignment(sm);
+    @include q-grid-row-distribution(sm);
+  }
+
+  @media only screen and (min-width: 64em) {
+    @include q-grid-row-alignment(md);
+    @include q-grid-row-distribution(md);
+  }
+
+  @media only screen and (min-width: 75em) {
+    @include q-grid-row-alignment(lg);
+    @include q-grid-row-distribution(lg);
+  }
+}

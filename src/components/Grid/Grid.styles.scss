@@ -1,0 +1,11 @@
+.q-grid {
+  &--fluid {
+    padding-right: var(--q-grid-outer-margin, 2rem);
+    padding-left: var(--q-grid-outer-margin, 2rem);
+  }
+
+  &--fluid & {
+    padding-right: var(--q-grid-outer-margin, 2rem);
+    padding-left: var(--q-grid-outer-margin, 2rem);
+  }
+}

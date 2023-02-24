@@ -1,0 +1,91 @@
+.q-dropdown {
+  display: inline-block;
+
+  & .q-popup {
+    z-index: var(--q-z-index-dropdown);
+  }
+
+  &--placement-top,
+  &--placement-top-start,
+  &--placement-top-end {
+    .q-popup {
+      transform-origin: center bottom;
+    }
+  }
+
+  &--placement-bottom,
+  &--placement-bottom-start,
+  &--placement-bottom-end {
+    .q-popup {
+      transform-origin: center top;
+    }
+  }
+
+  &--placement-left,
+  &--placement-left-start,
+  &--placement-left-end {
+    .q-popup {
+      transform-origin: center right;
+    }
+  }
+
+  &--placement-right,
+  &--placement-right-start,
+  &--placement-right-end {
+    .q-popup {
+      transform-origin: center left;
+    }
+  }
+
+  &__trigger {
+    display: block;
+  }
+
+  &__panel {
+    font-family: var(--q-font-sans);
+    font-size: var(--q-font-size-medium);
+    font-weight: var(--q-font-weight-normal);
+    color: var(--color);
+    box-shadow: var(--q-shadow-large);
+    pointer-events: none;
+  }
+
+  &--open &__panel {
+    pointer-events: all;
+  }
+
+  .q-menu {
+    max-width: var(--auto-size-available-width) !important;
+    max-height: var(--auto-size-available-height) !important;
+  }
+
+  .anim-enter-active {
+    animation: show 100ms ease;
+  }
+
+  .anim-leave-active {
+    animation: hide 100ms ease;
+  }
+
+  @keyframes show {
+    0% {
+      scale: 0.9;
+      opacity: 0;
+    }
+    100% {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  @keyframes hide {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 0.9;
+      opacity: 0;
+    }
+  }
+}

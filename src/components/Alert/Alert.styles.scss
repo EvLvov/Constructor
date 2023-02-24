@@ -1,0 +1,84 @@
+:host {
+  display: contents;
+  /* For better DX, we'll reset the margin here so the base part can inherit it */
+  margin: 0;
+}
+.q-alert {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background-color: var(--q-panel-background-color);
+  border: solid var(--q-panel-border-width) var(--q-panel-border-color);
+  border-top-width: calc(var(--q-panel-border-width) * 3);
+  border-radius: var(--q-border-radius-medium);
+  box-shadow: var(--box-shadow);
+  font-family: var(--q-font-sans);
+  font-size: var(--q-font-size-small);
+  font-weight: var(--q-font-weight-normal);
+  line-height: 1.6;
+  color: var(--q-color-neutral-700);
+  margin: inherit;
+}
+.q-alert:not(.q-alert--has-icon) .q-alert__icon,
+.q-alert:not(.q-alert--closable) .q-alert__close-button {
+  display: none;
+}
+.q-alert__icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: var(--q-font-size-large);
+  padding-inline-start: var(--q-spacing-large);
+}
+.q-alert--primary {
+  border-top-color: var(--q-color-primary-600);
+}
+.q-alert--primary .q-alert__icon {
+  color: var(--q-color-primary-600);
+}
+.q-alert--success {
+  border-top-color: var(--q-color-success-600);
+}
+.q-alert--success .q-alert__icon {
+  color: var(--q-color-success-600);
+}
+.q-alert--neutral {
+  border-top-color: var(--q-color-neutral-600);
+}
+.q-alert--neutral .q-alert__icon {
+  color: var(--q-color-neutral-600);
+}
+.q-alert--warning {
+  border-top-color: var(--q-color-warning-600);
+}
+.q-alert--warning .q-alert__icon {
+  color: var(--q-color-warning-600);
+}
+.q-alert--danger {
+  border-top-color: var(--q-color-danger-600);
+}
+.q-alert--danger .q-alert__icon {
+  color: var(--q-color-danger-600);
+}
+.q-alert__message {
+  flex: 1 1 auto;
+  padding: var(--q-spacing-large);
+  overflow: hidden;
+}
+.q-alert__close-button {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: var(--q-font-size-large);
+  padding-inline-end: var(--q-spacing-medium);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,22 @@
+.q-sidebar {
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  background-color: var(--q-color-neutral-0);
+  border-right: solid 1px var(--q-color-neutral-200);
+  overflow-y: auto;
+  transition: transform 250ms ease-out;
+  z-index: 20;
+
+  &__nav {
+    padding: 2rem 0;
+  }
+
+  &__search {
+    padding: 2rem;
+    border-bottom: solid 1px var(--q-color-neutral-200);
+  }
+}

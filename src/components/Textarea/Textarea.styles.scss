@@ -1,0 +1,139 @@
+.q-textarea {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  font-family: var(--q-input-font-family);
+  font-weight: var(--q-input-font-weight);
+  line-height: var(--q-line-height-normal);
+  letter-spacing: var(--q-input-letter-spacing);
+  vertical-align: middle;
+  transition: var(--q-transition-fast) color, var(--q-transition-fast) border,
+    var(--q-transition-fast) box-shadow,
+    var(--q-transition-fast) background-color;
+  cursor: text;
+
+  &__control {
+    flex: 1 1 auto;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1.4;
+    color: var(--q-input-color);
+    border: none;
+    background: none;
+    box-shadow: none;
+    cursor: inherit;
+    -webkit-appearance: none;
+  }
+
+  &__control::-webkit-search-decoration,
+  &__control::-webkit-search-cancel-button,
+  &__control::-webkit-search-results-button,
+  &__control::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+
+  &__control::placeholder {
+    color: var(--q-input-placeholder-color);
+    user-select: none;
+  }
+
+  &__control:focus {
+    outline: none;
+  }
+
+  /* Standard textareas */
+  .q-textarea--standard {
+    background-color: var(--q-input-background-color);
+    border: solid var(--q-input-border-width) var(--q-input-border-color);
+  }
+  .q-textarea--standard:hover:not(.q-textarea--disabled) {
+    background-color: var(--q-input-background-color-hover);
+    border-color: var(--q-input-border-color-hover);
+  }
+  .q-textarea--standard:hover:not(.q-textarea--disabled) .q-textarea__control {
+    color: var(--q-input-color-hover);
+  }
+  .q-textarea--standard.q-textarea--focused:not(.q-textarea--disabled) {
+    background-color: var(--q-input-background-color-focus);
+    border-color: var(--q-input-border-color-focus);
+    color: var(--q-input-color-focus);
+    box-shadow: 0 0 0 var(--q-focus-ring-width) var(--q-input-focus-ring-color);
+  }
+  .q-textarea--standard.q-textarea--focused:not(.q-textarea--disabled)
+    .q-textarea__control {
+    color: var(--q-input-color-focus);
+  }
+  .q-textarea--standard.q-textarea--disabled {
+    background-color: var(--q-input-background-color-disabled);
+    border-color: var(--q-input-border-color-disabled);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .q-textarea--standard.q-textarea--disabled .q-textarea__control {
+    color: var(--q-input-color-disabled);
+  }
+  .q-textarea--standard.q-textarea--disabled .q-textarea__control::placeholder {
+    color: var(--q-input-placeholder-color-disabled);
+  }
+
+  /*
+   * Size modifiers
+   */
+  .q-textarea--small {
+    border-radius: var(--q-input-border-radius-small);
+    font-size: var(--q-input-font-size-small);
+  }
+  .q-textarea--small &__control {
+    padding: 0.5em var(--q-input-spacing-small);
+  }
+  .q-textarea--medium {
+    border-radius: var(--q-input-border-radius-medium);
+    font-size: var(--q-input-font-size-medium);
+  }
+  .q-textarea--medium &__control {
+    padding: 0.5em var(--q-input-spacing-medium);
+  }
+  .q-textarea--large {
+    border-radius: var(--q-input-border-radius-large);
+    font-size: var(--q-input-font-size-large);
+  }
+  .q-textarea--large &__control {
+    padding: 0.5em var(--q-input-spacing-large);
+  }
+
+  /* Filled textareas */
+  .q-textarea--filled {
+    border: none;
+    background-color: var(--q-input-filled-background-color);
+    color: var(--q-input-color);
+  }
+  .q-textarea--filled:hover:not(.q-textarea--disabled) {
+    background-color: var(--q-input-filled-background-color-hover);
+  }
+  .q-textarea--filled.q-textarea--focused:not(.q-textarea--disabled) {
+    background-color: var(--q-input-filled-background-color-focus);
+    outline: var(--q-focus-ring);
+    outline-offset: var(--q-focus-ring-offset);
+  }
+  .q-textarea--filled.q-textarea--disabled {
+    background-color: var(--q-input-filled-background-color-disabled);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /*
+   * Resize types
+   */
+  .q-textarea--resize-none .q-textarea__control {
+    resize: none;
+  }
+  .q-textarea--resize-vertical .q-textarea__control {
+    resize: vertical;
+  }
+  .q-textarea--resize-auto .q-textarea__control {
+    height: auto;
+    resize: none;
+  }
+}

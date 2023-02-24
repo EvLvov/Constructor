@@ -1,0 +1,10 @@
+.q-tree {
+  --indent-guide-color: var(--q-color-neutral-200);
+  --indent-guide-offset: 0;
+  --indent-guide-style: solid;
+  --indent-guide-width: 0;
+  --indent-size: var(--q-spacing-large);
+  display: block;
+  isolation: isolate;
+  font-size: 0;
+}

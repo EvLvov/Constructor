@@ -1,0 +1,252 @@
+.q-input {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: start;
+  position: relative;
+  width: 100%;
+  font-family: var(--q-input-font-family);
+  font-weight: var(--q-input-font-weight);
+  letter-spacing: var(--q-input-letter-spacing);
+  vertical-align: middle;
+  overflow: hidden;
+  cursor: text;
+  box-sizing: border-box;
+  transition: var(--q-transition-fast) color, var(--q-transition-fast) border,
+    var(--q-transition-fast) box-shadow,
+    var(--q-transition-fast) background-color;
+}
+
+/* Standard inputs */
+.q-input--standard {
+  background-color: var(--q-input-background-color);
+  border: solid var(--q-input-border-width) var(--q-input-border-color);
+}
+.q-input--standard:hover:not(.q-input--disabled) {
+  background-color: var(--q-input-background-color-hover);
+  border-color: var(--q-input-border-color-hover);
+}
+.q-input--standard.q-input--focused:not(.q-input--disabled) {
+  background-color: var(--q-input-background-color-focus);
+  border-color: var(--q-input-border-color-focus);
+  box-shadow: 0 0 0 var(--q-focus-ring-width) var(--q-input-focus-ring-color);
+}
+.q-input--standard.q-input--focused:not(.q-input--disabled) .q-input__control {
+  color: var(--q-input-color-focus);
+}
+.q-input--standard.q-input--disabled {
+  background-color: var(--q-input-background-color-disabled);
+  border-color: var(--q-input-border-color-disabled);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.q-input--standard.q-input--disabled .q-input__control {
+  color: var(--q-input-color-disabled);
+}
+.q-input--standard.q-input--disabled .q-input__control::placeholder {
+  color: var(--q-input-placeholder-color-disabled);
+}
+/* Filled inputs */
+.q-input--filled {
+  border: none;
+  background-color: var(--q-input-filled-background-color);
+  color: var(--q-input-color);
+}
+.q-input--filled:hover:not(.q-input--disabled) {
+  background-color: var(--q-input-filled-background-color-hover);
+}
+.q-input--filled.q-input--focused:not(.q-input--disabled) {
+  background-color: var(--q-input-filled-background-color-focus);
+  outline: var(--q-focus-ring);
+  outline-offset: var(--q-focus-ring-offset);
+}
+.q-input--filled.q-input--disabled {
+  background-color: var(--q-input-filled-background-color-disabled);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.q-input__control {
+  flex: 1 1 auto;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  min-width: 0;
+  height: 100%;
+  color: var(--q-input-color);
+  border: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  cursor: inherit;
+  -webkit-appearance: none;
+}
+.q-input__control::-webkit-search-decoration,
+.q-input__control::-webkit-search-cancel-button,
+.q-input__control::-webkit-search-results-button,
+.q-input__control::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+.q-input__control:-webkit-autofill,
+.q-input__control:-webkit-autofill:hover,
+.q-input__control:-webkit-autofill:focus,
+.q-input__control:-webkit-autofill:active {
+  box-shadow: 0 0 0 var(--q-input-height-large)
+    var(--q-input-background-color-hover) inset !important;
+  -webkit-text-fill-color: var(--q-color-primary-500);
+  caret-color: var(--q-input-color);
+}
+.q-input--filled .q-input__control:-webkit-autofill,
+.q-input--filled .q-input__control:-webkit-autofill:hover,
+.q-input--filled .q-input__control:-webkit-autofill:focus,
+.q-input--filled .q-input__control:-webkit-autofill:active {
+  box-shadow: 0 0 0 var(--q-input-height-large)
+    var(--q-input-filled-background-color) inset !important;
+}
+.q-input__control::placeholder {
+  font-size: var(--q-font-size-medium);
+  color: var(--q-input-placeholder-color);
+  user-select: none;
+}
+.q-input:hover:not(.q-input--disabled) .q-input__control {
+  color: var(--q-input-color-hover);
+}
+.q-input__control:focus {
+  outline: none;
+}
+.q-input__prefix,
+.q-input__suffix {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  cursor: default;
+}
+
+.q-input__prefix > .text,
+.q-input__suffix > .text,
+.q-input__prefix > .q-icon,
+.q-input__suffix > .q-icon {
+  color: var(--q-input-icon-color);
+}
+
+/*
+   * Size modifiers
+   */
+.q-input--small {
+  border-radius: var(--q-input-border-radius-small);
+  font-size: var(--q-input-font-size-small);
+  height: var(--q-input-height-small);
+}
+.q-input--small .q-input__control {
+  height: calc(var(--q-input-height-small) - var(--q-input-border-width) * 2);
+  padding: 0 var(--q-input-spacing-small);
+}
+.q-input--small .q-input__clear,
+.q-input--small .q-input__password-toggle {
+  width: calc(1em + var(--q-input-spacing-small) * 2);
+}
+.q-input--small .q-input__prefix > * {
+  padding-inline-start: var(--q-input-spacing-small);
+}
+.q-input--small .q-input__suffix > * {
+  padding-inline-end: var(--q-input-spacing-small);
+}
+.q-input--medium {
+  border-radius: var(--q-input-border-radius-medium);
+  font-size: var(--q-input-font-size-medium);
+  height: var(--q-input-height-medium);
+}
+.q-input--medium .q-input__control {
+  height: calc(var(--q-input-height-medium) - var(--q-input-border-width) * 2);
+  padding: 0 var(--q-input-spacing-medium);
+}
+.q-input--medium .q-input__clear,
+.q-input--medium .q-input__password-toggle {
+  width: calc(1em + var(--q-input-spacing-medium) * 2);
+}
+.q-input--medium .q-input__prefix > * {
+  padding-inline-start: var(--q-input-spacing-medium);
+}
+.q-input--medium .q-input__suffix > * {
+  padding-inline-end: var(--q-input-spacing-medium);
+}
+.q-input--large {
+  border-radius: var(--q-input-border-radius-large);
+  font-size: var(--q-input-font-size-large);
+  height: var(--q-input-height-large);
+}
+.q-input--large .q-input__control {
+  height: calc(var(--q-input-height-large) - var(--q-input-border-width) * 2);
+  padding: 0 var(--q-input-spacing-large);
+}
+.q-input--large .q-input__clear,
+.q-input--large .q-input__password-toggle {
+  width: calc(1em + var(--q-input-spacing-large) * 2);
+}
+.q-input--large .q-input__prefix > * {
+  padding-inline-start: var(--q-input-spacing-large);
+}
+.q-input--large .q-input__suffix > * {
+  padding-inline-end: var(--q-input-spacing-large);
+}
+/*
+   * Pill modifier
+   */
+.q-input--pill.q-input--small {
+  border-radius: var(--q-input-height-small);
+}
+.q-input--pill.q-input--medium {
+  border-radius: var(--q-input-height-medium);
+}
+.q-input--pill.q-input--large {
+  border-radius: var(--q-input-height-large);
+}
+/*
+   * Clearable + Password Toggle
+   */
+.q-input__clear,
+.q-input__password-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+  color: var(--q-input-icon-color);
+  border: none;
+  background: none;
+  padding: 0;
+  transition: var(--q-transition-fast) color;
+  cursor: pointer;
+
+  .q-icon {
+    font-size: 18px;
+  }
+}
+.q-input__clear:hover,
+.q-input__password-toggle:hover {
+  color: var(--q-input-icon-color-hover);
+}
+.q-input__clear:focus,
+.q-input__password-toggle:focus {
+  outline: none;
+}
+.q-input--empty .q-input__clear {
+  visibility: hidden;
+}
+/* Don't show the browser's password toggle in Edge */
+::-ms-reveal {
+  display: none;
+}
+/* Hide Firefox's clear button on date and time inputs */
+.q-input--is-firefox input[type="date"],
+.q-input--is-firefox input[type="time"] {
+  clip-path: inset(0 2em 0 0);
+}
+/* Hide the built-in number spinner */
+.q-input--no-spin-buttons input[type="number"]::-webkit-outer-spin-button,
+.q-input--no-spin-buttons input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+.q-input--no-spin-buttons input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,16 @@
+.q-divider--horizontal {
+  --color: var(--q-panel-border-color);
+  --width: var(--q-panel-border-width);
+  --spacing: var(--q-spacing-medium);
+
+  display: block;
+  border-top: solid var(--width) var(--color);
+  margin: var(--spacing) 0;
+}
+
+.q-divider--vertical {
+  display: inline-block;
+  height: 100%;
+  border-left: solid var(--width) var(--color);
+  margin: 0 var(--spacing);
+}
